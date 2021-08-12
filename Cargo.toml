@@ -6,6 +6,7 @@ default-run = "cm-cli"
 
 [dependencies]
 anyhow = "1.0"
+chrono = { version = "0.4.19", features = ["serde"] }
 thiserror = "1.0"
 reqwest = { version = "0.11", features = ["blocking", "json"] }
 serde = { version = "1.0", features = ["derive"] }
@@ -14,6 +15,7 @@ url = "2.2"
 clap = "2.33.3"
 log = "0.4"
 env_logger = "0.9.0"
+regex = "1"
 
 [[bin]]
 name = "cm-cli"

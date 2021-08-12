@@ -22,7 +22,7 @@ pub enum CoreError {
 
 impl From<reqwest::Error> for CoreError {
     fn from(e: reqwest::Error) -> Self {
-        if (e.is_status() && e.status().unwrap() == 404) {
+        if e.is_status() && e.status().unwrap() == 404 {
             return CoreError::NotFound;
         }
         CoreError::ClientError(e.to_string())

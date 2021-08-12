@@ -1,4 +1,5 @@
 use crate::core::error::CoreError;
+use chrono::{DateTime, Utc};
 use log;
 use reqwest;
 use serde::Deserialize;
@@ -13,6 +14,7 @@ use url::Url;
 pub struct MetaData {
     pub name: String,
     pub version: String,
+    pub created: DateTime<Utc>,
 }
 
 #[derive(Deserialize, Debug)]
@@ -95,7 +97,7 @@ impl Client {
         let url = self.delete_url(chart_name, chart_version);
         log::debug!("delete version use url: [{}]", &url);
         let client = reqwest::blocking::Client::new();
-        let resp = client.delete(url).send()?;
+        let _resp = client.delete(url).send()?;
         log::debug!("success delete version {}-{}", chart_name, chart_version);
         Ok(())
     }

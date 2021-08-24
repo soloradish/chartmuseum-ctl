@@ -1,5 +1,5 @@
 mod core;
-use anyhow::{Result};
+use anyhow::Result;
 use chrono::{Duration, Utc};
 use clap::{App, AppSettings, Arg, SubCommand};
 use env_logger;
@@ -63,8 +63,7 @@ fn main() -> Result<()> {
                         .value_name("REGEX_EXPR")
                         .help("match version with regex expressions")
                         .takes_value(true)
-                        .validator(valid_regex)
-                    ,
+                        .validator(valid_regex),
                 ),
         )
         .subcommand(

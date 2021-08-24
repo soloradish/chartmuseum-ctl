@@ -1,6 +1,6 @@
 [package]
 name = "chartmuseum-ctl"
-version = "0.1.0"
+version = "0.1.2"
 edition = "2018"
 default-run = "cm-cli"
 
@@ -8,7 +8,7 @@ default-run = "cm-cli"
 anyhow = "1.0"
 chrono = { version = "0.4.19", features = ["serde"] }
 thiserror = "1.0"
-reqwest = { version = "0.11", features = ["blocking", "json"] }
+reqwest = { version = "0.11", features = ["blocking", "json", "native-tls-vendored"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 url = "2.2"
